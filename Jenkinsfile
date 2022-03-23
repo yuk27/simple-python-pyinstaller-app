@@ -6,10 +6,17 @@ pipeline {
 
   }
   stages {
-    stage('') {
+    stage('Basic Info') {
       steps {
         sh '''echo PATH = ${PATH}
 echo M2_HOME = ${M2_HOME}'''
+      }
+    }
+
+    stage('') {
+      steps {
+        sh 'python -m py_compile sources/add2vals.py sources/calc.py'
+        stash(name: 'compiled-results', includes: 'sources/*.py')
       }
     }
 
