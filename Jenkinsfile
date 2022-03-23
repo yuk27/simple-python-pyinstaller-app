@@ -20,7 +20,7 @@ echo M2_HOME = ${M2_HOME}'''
       }
     }
 
-    stage('') {
+    stage('Test') {
       agent {
         docker {
           image 'qnib/pytest'
