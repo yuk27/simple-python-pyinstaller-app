@@ -13,10 +13,9 @@ echo M2_HOME = ${M2_HOME}'''
       }
     }
 
-    stage('') {
+    stage('Build Python') {
       steps {
         sh 'python -m py_compile sources/add2vals.py sources/calc.py'
-        stash(name: 'compiled-results', includes: 'sources/*.py')
       }
     }
 
